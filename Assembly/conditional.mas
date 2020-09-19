@@ -1,0 +1,41 @@
+        Input          /Get first input
+        Store X        /Store in X
+        Input          /Get second input
+        Store Y        /Store in Y
+        Input          /Get third input
+        Store Z        /Store in Z
+        Load X 
+        Subt Y
+        Skipcond 000   /Check for X < Y
+        Jump isXEqY    /if no, go to check for X = Y
+        Jump xLtEqY    /otherwise, go to process X <= Y
+isXEqY, Skipcond 400   /Check for X = Y
+        Jump isXNeZ    /If no, go to check for X != Z
+        Jump xLtEqY    /otherwise, to to process X <= Y
+isXNeZ, Load X 
+        Subt Z
+        Skipcond 400   /Check for X != Z
+        Jump xNeZ      /if X is = z, go to process X != Z
+        Jump Else      /otherwise, go to process else 
+xLtEqY, Load Y         /Process X < Y
+        Add One
+        Store Y
+        Jump End       /Go to output values
+xNeZ,   Load Y         /Process X != Z
+        Subt One
+        Store Y
+        Jump End       /Go to output values
+Else,   Load Z
+        Add One
+        Store Z
+End,    Load X         /Output values
+        Output
+        Load Y
+        Output
+        Load Z
+        Output
+        Halt
+X,      Dec 0
+Y,      Dec 0
+Z,      Dec 0
+One,    Dec 1
