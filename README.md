@@ -1,3 +1,3 @@
-# Sample Projects
+# CSC and NASA Internship Projects
 
-This repository contains some sample Python scripts and C++ projects.
+This repository contains Python, C++, and Assembly projects that I completed, independently, for my Computer Science courses and my NASA internship.
